@@ -1,5 +1,5 @@
 import { BuildOptions, build } from 'esbuild'
-import { dtsPlugin } from 'esbuild-plugin-d.ts'
+import { dtsPlugin as dts } from 'esbuild-plugin-d.ts'
 import tsc from 'esbuild-plugin-tsc'
 
 import packageJson from '../package.json'
@@ -15,7 +15,7 @@ const sharedConfig: BuildOptions = {
   minify: true,
   sourcemap: 'inline',
   external: [...Object.keys(dependencies), ...Object.keys(peerDependencies), '@tsoa/runtime'],
-  plugins: [tsc({ force: true }), dtsPlugin({ outDir: 'dist' })],
+  plugins: [tsc({ force: true }), dts({ outDir: 'dist' })],
 }
 
 export const BuildJs = async (): Promise<void> => {
