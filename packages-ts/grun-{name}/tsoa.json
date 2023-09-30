@@ -1,0 +1,19 @@
+{
+  "entryFile": "src/main.ts",
+  "controllerPathGlobs": ["src/controllers/*-controller.ts"],
+  "spec": {
+    "outputDirectory": "generated/tsoa/spec",
+    "specVersion": 3,
+    "yaml": true,
+    "securityDefinitions": {
+      "bearer_auth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "routes": {
+    "routesDir": "generated/tsoa",
+    "noImplicitAdditionalProperties": "silently-remove-extras"
+  }
+}
