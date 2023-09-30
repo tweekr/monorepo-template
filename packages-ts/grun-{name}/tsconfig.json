@@ -1,18 +1,12 @@
 {
-  "include": [
-    "**/*.ts"
-  ],
+  "include": ["**/*.ts"],
   "exclude": [
     "node_modules",
     "dist",
-    "scripts",
     "**/*.test.ts"
   ],
   "compilerOptions": {
-    "outDir": "dist",
-
-    "declaration": true,
-    "emitDeclarationOnly": true,
+    "outDir": "dist/tsc",
 
     "skipLibCheck":true,
 
