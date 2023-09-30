@@ -3,7 +3,7 @@
 service ?=
 tag ?= $(shell git rev-parse --short HEAD)
 
-build-image:
+docker-compose-build:
 	@TAG=${tag} docker compose build ${service}
 	@TAG=${tag} docker compose push ${service}
 
