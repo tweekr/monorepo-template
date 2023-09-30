@@ -4,18 +4,15 @@
   "author": "tweekr.io",
   "private": true,
   "files": [
-    "dist/*"
+    "dist/esbuild/*"
   ],
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/esbuild/index.js",
   "scripts": {
     "start": "node dist/index.js",
     "lint:check": "eslint . --ext .ts --ext .tsx --quiet",
     "lint:fix": "yarn lint:check --fix",
     "test": "jest --ci --coverage",
-    "build": "ts-node scripts/build.ts",
-    "prepublish": "yarn run build"
+    "build": "make build"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
