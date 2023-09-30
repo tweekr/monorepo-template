@@ -14,9 +14,9 @@
     "infra/*"
   ],
   "scripts": {
-    "flow": "flow",
-    "build": "node build.mjs",
-    "prepublish": "yarn run build"
+    "build": "yarn workspaces foreach -pt run build",
+    "build:images": "make docker-compose-build",
+    "docker-compose:up": "make docker-compose-up"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
