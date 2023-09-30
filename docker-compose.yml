@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  # # infrastructure mongodb
+  # test-mongo:
+  #   container_name: test-mongo
+  #   image: mongo:latest
+  #   expose:
+  #     - "27017"
+  #   ports:
+  #     - "27017:27017"
+  #   networks:
+  #     - default
+  #   restart: always
+  # service backend
+  sample-service:
+    container_name: sample-service
+    image: {your-repository}/{name}:${TAG}
+    build:
+      context: .
+      dockerfile: packages-ts/grun-{name}/Dockerfile
+    ports:
+      - '9000:9000'
+    networks:
+      - default
+    restart: always
