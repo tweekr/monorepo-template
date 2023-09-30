@@ -1,4 +1,4 @@
-import { getEnv } from './get-env'
+import { getEnv } from './main'
 
 let processEnv: NodeJS.ProcessEnv
 

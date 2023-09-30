@@ -3,9 +3,13 @@ import express, { Request, Response } from 'express'
 import helmet from 'helmet'
 import http from 'http'
 
+import { getEnv } from '@tweekr/zed-env'
+
 // import mongoose from 'mongoose'
 // import morgan from 'morgan'
 import { RegisterRoutes } from '../generated/tsoa/routes'
+
+const PORT = getEnv('PORT', 'number', 9000)
 
 const app = express()
 
@@ -45,4 +49,4 @@ const main = async (port: number): Promise<void> => {
   })
 }
 
-void main('PORT' in process.env ? Number(process.env.PORT) : 9000)
+void main(PORT)
